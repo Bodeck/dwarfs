@@ -13,6 +13,7 @@
     "init:dirs": "mkdirp sass css vendor images js",
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "normalize-css": "curl https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css -o vendor/normalize.css",
     "build": "npm-run-all build:* test",
     "build:clean": "rimraf css/*.css",
     "build:sass": "node-sass --output-style compact -o css sass",
