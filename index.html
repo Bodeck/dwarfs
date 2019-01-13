@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,53 +10,60 @@
     <link rel="stylesheet" href="vendor/flickity.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="carousel">
-        <div class="carousel-slide" id="slide-0" style="background-image: url(/images/dwarf-laptop.jpg)">
-            <div class="container">
-                <h3>Dwarf Name</h3>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus enim pariatur ipsum non corrupti veniam aliquam maiores reprehenderit soluta reiciendis sequi voluptatum quod, dolorem est, culpa dolore qui velit mollitia.
-                </p>
-            </div>
-        </div>
-        <div class="carousel-slide" id="slide-1" style="background-image: url(images/dwarf-pigeon.jpg)">
-            <div class="container">
-                <h3>Dwarf Name</h3>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus enim pariatur ipsum non corrupti veniam aliquam maiores reprehenderit soluta reiciendis sequi voluptatum quod, dolorem est, culpa dolore qui velit mollitia.
-                </p>
-            </div>
-        </div>
-        <div class="carousel-slide" id="slide-2" style="background-image: url(images/flower-dwarf.jpg)">
-            <div class="container">
-                <h3>Dwarf Name</h3>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus enim pariatur ipsum non corrupti veniam aliquam maiores reprehenderit soluta reiciendis sequi voluptatum quod, dolorem est, culpa dolore qui velit mollitia.
-                </p>
-            </div>
-        </div>
-        <div class="carousel-slide" id="slide-3" style="background-image: url(images/pan-dwarfs.jpg)">
-            <div class="container">
-                <h3>Dwarf Name</h3>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus enim pariatur ipsum non corrupti veniam aliquam maiores reprehenderit soluta reiciendis sequi voluptatum quod, dolorem est, culpa dolore qui velit mollitia.
-                </p>
-        </div>
-        </div>
-        <div class="carousel-slide" id="slide-4" style="background-image: url(images/krasnale-syzyfki.jpg)">
-            <div class="container">
-                <h3>Dwarf Name</h3>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus enim pariatur ipsum non corrupti veniam aliquam maiores reprehenderit soluta reiciendis sequi voluptatum quod, dolorem est, culpa dolore qui velit mollitia.
-                </p>
-            </div>
-        </div>
+
         <button class="btn-restart">Restart</button>
     </div>
     <div class="progress-bar"></div>
+
+    </div>
+    <script id="slide-template" type="x-tmpl-mustache">
+            <div class="carousel-slide" id="slide-{{id}}" style="background-image:  url({{image}})">
+                <div class="container">
+                    <h3>{{title}}</h3>
+                    {{{description}}}
+                </div>
+            </div>
+    </script>
+    <script>
+        var slideData = [
+            {
+                title: 'Capgeminiusz Programmer',
+                image: 'images/dwarf-laptop.jpg',
+                description: '<p>Lorem ipsum...</p>'
+            },
+            {
+                title: 'Pigeon-keeper',
+                image: 'images/dwarf-pigeon.jpg',
+                description: '<p>Pigeon-fancier has a job that was once highly esteemed by the Little Ones. Although dwarves no longer fly on the backs of pigeons, he still hasn’t abandoned his work and passion. </p>'
+            }, {
+                title: 'The Friendly Traveller',
+                image: 'images/flower-dwarf.jpg',
+                description: '<p>Lorem ipsum...</p>'
+            },
+            {
+                title: 'Sisyphers',
+                image: 'images/krasnale-syzyfki.jpg',
+                description: '<p>No one really knows their true names – they’ve been asked numerous times, but are too busy to answer. People simply know and call them Sisyphers. These diligent Little Fellows had a strong desire to help Humans. So they decided to assist in the surrounding renovations.</p>'
+            },
+            {
+                title: 'Temperaturiusz, Magnesjusz i Luminescencjusz',
+                image: 'images/pan-dwarfs.jpg',
+                description: '<p>Lorem ipsum...</p>'
+            },
+            {
+                title: 'Tolerance Dwarfs',
+                image: 'images/tolerance-dwarfs.jpg',
+                description: '<p>Lorem ipsum...</p>'
+            }
+        ] 
+    </script>
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
+    <script src="vendor/mustache.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
