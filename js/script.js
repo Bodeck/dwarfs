@@ -22,10 +22,14 @@ carousel.on('scroll', function (progress) {
     progress = Math.max(0, Math.min(1, progress));
     progressBar.style.width = progress * 100 + '%';
 });
-
+var preventMapCenter = false;
 carousel.on('change', function(index){
-    newCoords = slideData[index].coords;
-    map.panTo(newCoords);
+    if(preventMapCenter) {
+        preventMapCenter = false;
+    } else {
+        newCoords = slideData[index].coords;
+        map.panTo(newCoords);
+    }
 })
 
 var btnReset = document.querySelector('.btn-restart');
@@ -46,6 +50,7 @@ window.initMap = function () {
             title: slide.title
         });
         marker.addListener('click', function(){
+            preventMapCenter = true;
             carousel.select(index, false, false);
         });
     });
