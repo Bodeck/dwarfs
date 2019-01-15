@@ -34,12 +34,14 @@ window.initMap = function () {
     var map = new google.maps.Map(
         document.getElementById('map'), { zoom: 18, center: slideData[0].coords });
 
-    slideData.forEach(function (slide) {
-        new google.maps.Marker({
+    slideData.forEach(function (slide, index) {
+        var marker = new google.maps.Marker({
             position: slide.coords,
             map: map,
             title: slide.title
         });
+        marker.addListener('click', function(){
+            carousel.select(index, false, false);
+        })
     })
-
 };
