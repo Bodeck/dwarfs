@@ -9,12 +9,6 @@ var carouselOptions = {
 var slideTemplate = document.querySelector('#slide-template').innerHTML;
 Mustache.parse(slideTemplate);
 
-// var slidesHtml = '';
-// slideData.forEach(function (slide, index) {
-//     slide.id = index;
-//     slidesHtml += Mustache.render(slideTemplate, slide);
-// });
-
 var slidesHtml = slideData.reduce(function(acc,slide,index) {
     slide.id = index;
     return acc += Mustache.render(slideTemplate, slide)
